@@ -1,9 +1,9 @@
 const mutations = {
-  increment(state) {
+  increment (state) {
     state.count++;
   },
 
-  decrement(state) {
+  decrement (state) {
     if (state.count > 0) {
       state.count--;
     }

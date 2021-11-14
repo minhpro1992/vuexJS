@@ -1,5 +1,5 @@
 const state = {
-  text: "",
+  text: '',
   isLoading: false,
   todos: []
 };

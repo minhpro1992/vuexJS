@@ -1,12 +1,12 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import { state, getters, actions, mutations } from "../components/counter";
+import Vue from 'vue';
+import Vuex from 'vuex';
+import { state, getters, actions, mutations } from '../components/counter';
 import {
   state as todoState,
   getters as todoGetters,
   actions as todoActions,
   mutations as todoMutations
-} from "../components/todos";
+} from '../components/todos';
 Vue.use(Vuex);
 
 const moduleCounter = {
