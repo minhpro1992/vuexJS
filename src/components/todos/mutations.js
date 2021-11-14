@@ -7,7 +7,8 @@ const mutations = {
       id: state.todos.length + 1,
       title: state.text
     }));
-  }
+  },
+  GET_TODO_DETAIL: (state, selectedTodo) => (state.todo = selectedTodo)
 };
 
 export { mutations };
