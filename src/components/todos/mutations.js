@@ -8,7 +8,13 @@ const mutations = {
       title: state.text
     }));
   },
-  GET_TODO_DETAIL: (state, selectedTodo) => (state.todo = selectedTodo)
+  GET_TODO_DETAIL: (state, selectedTodo) => (state.todo = selectedTodo),
+  UPDATE_TODO: (state, data) => {
+    const index = state.todos.findIndex(todo => todo.id === data.id);
+    if (index > -1) {
+      state.todos = [...state.todos, (state.todos[index] = data)];
+    }
+  }
 };
 
 export { mutations };

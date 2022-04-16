@@ -10,6 +10,7 @@ import HelloWorld from "@/components/HelloWorld";
 import Counter from "@/components/counter";
 import Todos from "@/components/todos";
 import Todo from "@/components/todos/todo";
+import TodoEdit from "@/components/todos/Edit";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
@@ -39,6 +40,11 @@ export default new Router({
       path: "/todos/:id",
       name: "Todo",
       component: Todo
+    },
+    {
+      path: "/todos/:id/edit",
+      name: "TodoEdit",
+      component: TodoEdit
     }
   ]
 });

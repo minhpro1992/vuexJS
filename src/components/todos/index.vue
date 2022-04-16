@@ -14,6 +14,15 @@
         <router-link v-bind:to="{ name: 'Todo', params: { id: todo.id } }">
           Id: {{ todo.id }} - title: {{ todo.title }}
         </router-link>
+        <router-link
+          v-bind:to="{
+            name: 'TodoEdit',
+            params: { id: todo.id },
+            path: `/todos/${todo.id}/edit`
+          }"
+        >
+          <button type="button" class="btn btn-success">Edit</button>
+        </router-link>
       </div>
     </div>
   </div>
@@ -29,7 +38,7 @@ export { state, actions, mutations, getters };
 export default {
   name: 'Todos',
   computed: {
-    ...mapGetters(['getTodos', 'getText'])
+    ...mapGetters(['getTodos', 'getText', 'getTodo'])
   },
   methods: mapActions(['fetchTodos', 'addTodo'])
 };

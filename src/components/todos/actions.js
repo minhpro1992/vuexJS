@@ -3,6 +3,7 @@ export const SET_LOADING_STATUS = "SET_LOADING_STATUS";
 export const SET_TODOS = "SET_TODOS";
 export const ADD_TODO = "ADD_TODO";
 export const GET_TODO_DETAIL = "GET_TODO_DETAIL";
+export const UPDATE_TODO = "UPDATE_TODO";
 
 const actions = {
   fetchTodos: ({ commit }) => {
@@ -33,6 +34,16 @@ const actions = {
       .catch(error => {
         commit(SET_LOADING_STATUS, error);
       });
+  },
+  updateTodo: ({ commit }, todo) => {
+    axios
+      .put(`https://jsonplaceholder.typicode.com/todos/${todo.id}`, todo)
+      .then(response => {
+        console.log("Update sucess:", response);
+        commit(UPDATE_TODO, response.data);
+      })
+      .catch(error => console.log("error", error))
+      .finally(() => {});
   }
 };
 
