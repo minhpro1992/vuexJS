@@ -40,6 +40,8 @@ export default {
   computed: {
     ...mapGetters(['getTodos', 'getText', 'getTodo'])
   },
-  methods: mapActions(['fetchTodos', 'addTodo'])
+  methods: {
+    ...mapActions(['fetchTodos', 'addTodo'])
+  }
 };
 </script>

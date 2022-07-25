@@ -23,12 +23,16 @@ import { mutations } from './mutations'
 export { state, getters, actions, mutations }
 export default {
   name: 'Counter',
-  computed: mapGetters(['evenOrOdd', 'count']),
-  methods: mapActions([
-    'increment',
-    'decrement',
-    'incrementIfEven',
-    'incrementAsync'
-  ])
+  computed: {
+    ...mapGetters(['evenOrOdd', 'count'])
+  },
+  methods: {
+    ...mapActions([
+      'increment',
+      'decrement',
+      'incrementIfEven',
+      'incrementAsync'
+    ])
+  }
 }
 </script>

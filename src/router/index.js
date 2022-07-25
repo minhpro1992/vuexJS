@@ -11,6 +11,7 @@ import Counter from "@/components/counter";
 import Todos from "@/components/todos";
 import Todo from "@/components/todos/todo";
 import TodoEdit from "@/components/todos/Edit";
+import SlotExample from "@/components/learning-resources/TheResources.vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
@@ -45,6 +46,11 @@ export default new Router({
       path: "/todos/:id/edit",
       name: "TodoEdit",
       component: TodoEdit
+    },
+    {
+      path: "/slot",
+      name: "slot",
+      component: SlotExample
     }
   ]
 });
