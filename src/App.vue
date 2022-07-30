@@ -5,6 +5,7 @@
     <router-link to="/counter">Go to Counter</router-link>
     <router-link to="/todos"> Go to Todos</router-link>
     <router-link to="/slot">Go to slot example </router-link>
+    <router-link to="/animate">Go to animation example </router-link>
     <router-view />
   </div>
 </template>

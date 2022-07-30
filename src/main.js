@@ -7,6 +7,7 @@ import { store } from "./store";
 import BaseCard from "./components/UI/BaseCard.vue";
 import BaseButton from "./components/UI/BaseButton.vue";
 import BaseDialog from "./components/UI/BaseDialog.vue";
+import BaseModal from "./components/UI/BaseModal.vue";
 
 Vue.config.productionTip = false;
 
@@ -24,3 +25,4 @@ const app = new Vue({
 app.component("base-card", BaseCard);
 app.component("base-button", BaseButton);
 app.component("base-dialog", BaseDialog);
+app.component("base-modal", BaseModal);
