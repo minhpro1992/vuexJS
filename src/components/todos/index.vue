@@ -11,24 +11,37 @@
     </div>
     <div v-else-if="getTodos.length > 0">
       <div v-for="todo in getTodos" v-bind:key="todo.id">
-        Id: {{ todo.id }} - title: {{ todo.title }}
+        <router-link v-bind:to="{ name: 'Todo', params: { id: todo.id } }">
+          Id: {{ todo.id }} - title: {{ todo.title }}
+        </router-link>
+        <router-link
+          v-bind:to="{
+            name: 'TodoEdit',
+            params: { id: todo.id },
+            path: `/todos/${todo.id}/edit`
+          }"
+        >
+          <button type="button" class="btn btn-success">Edit</button>
+        </router-link>
       </div>
     </div>
   </div>
 </template>
 <script>
-import { mapActions, mapGetters, mapState } from 'vuex'
-import { mapFields } from 'vuex-map-fields'
-import { actions } from './actions'
-import { state } from './state'
-import { mutations } from './mutations'
-import { getters } from './getters'
-export { state, actions, mutations, getters }
+import { mapActions, mapGetters, mapState } from 'vuex';
+import { mapFields } from 'vuex-map-fields';
+import { actions } from './actions';
+import { state } from './state';
+import { mutations } from './mutations';
+import { getters } from './getters';
+export { state, actions, mutations, getters };
 export default {
   name: 'Todos',
   computed: {
-    ...mapGetters(['getTodos', 'getText'])
+    ...mapGetters(['getTodos', 'getText', 'getTodo'])
   },
-  methods: mapActions(['fetchTodos', 'addTodo'])
-}
+  methods: {
+    ...mapActions(['fetchTodos', 'addTodo'])
+  }
+};
 </script>
