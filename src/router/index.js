@@ -13,6 +13,9 @@ import Todo from "@/components/todos/todo";
 import TodoEdit from "@/components/todos/Edit";
 import SlotExample from "@/components/learning-resources/TheResources.vue";
 import AnimationExample from "@/components/animation";
+import AllProducts from "@/pages/AllProducts.vue";
+import ProductDetails from "@/pages/ProductDetails.vue";
+import AddProduct from "@/pages/AddProduct.vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
@@ -57,6 +60,9 @@ export default new Router({
       path: "/animate",
       name: "animate",
       component: AnimationExample
-    }
+    },
+    { path: "/products", component: AllProducts },
+    { path: "/products/:pid", component: ProductDetails, props: true },
+    { path: "/products/add", component: AddProduct }
   ]
 });
