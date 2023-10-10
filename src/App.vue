@@ -48,7 +48,7 @@ export default {
     ]);
 
     function addProduct (productData) {
-      const newProduct = {
+      const newProduct: Record<string, string> = {
         id: new Date().toISOString(),
         title: productData.title,
         description: productData.description,
